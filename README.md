@@ -2,8 +2,14 @@
 
 Takes screenshots of each player's team in a mini league
 
-Dependencies: PhantomJS
+### Dependencies
 
-Usage: `bin/phantomjs render_multi_url.js`
+- PhantomJS
+
+### Usage
+
+ `bin/phantomjs render_multi_url.js`
+
+### Example output
 
 ![rendermulti-1](rendermulti-1.png)
