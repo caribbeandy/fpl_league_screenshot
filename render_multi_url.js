@@ -48,9 +48,9 @@ RenderUrlsToFile = function(urls, callbackPerUrl, callbackFinal) {
                 file = getFilename();
                 if (status === "success") {
                     return window.setTimeout((function() {
-                        page.render(file/*, {format: 'jpeg', quality: '75'}*/);
+                        page.render(file, {format: 'jpeg', quality: '75'});
                         return next(status, url, file);
-                    }), 1000);
+                    }), 2000);
                 } else {
                     return next(status, url, file);
                 }
@@ -68,18 +68,21 @@ if (system.args.length > 1) {
     arrayOfUrls = Array.prototype.slice.call(system.args, 1);
 } else {
     console.log("Usage: phantomjs render_multi_url.js [domain.name1, domain.name2, ...]");
-    arrayOfUrls = [
-		"http://fantasy.premierleague.com/a/team/1117151/event/1",
-		"http://fantasy.premierleague.com/a/team/1393717/event/1",
-		"http://fantasy.premierleague.com/a/team/64769/event/1",
-		"http://fantasy.premierleague.com/a/team/1586353/event/1",
-		"http://fantasy.premierleague.com/a/team/863772/event/1",
-		"http://fantasy.premierleague.com/a/team/686132/event/1",
-		"http://fantasy.premierleague.com/a/team/1137790/event/1",
-		"http://fantasy.premierleague.com/a/team/1516929/event/1",
-		"http://fantasy.premierleague.com/a/team/2638511/event/1",
-		"http://fantasy.premierleague.com/a/team/2894517/event/1"
-    ];
+	arrayOfUrls = [
+		"https://fantasy.premierleague.com/a/team/2894517",
+		"https://fantasy.premierleague.com/a/team/1139314",
+		"https://fantasy.premierleague.com/a/team/1399823",
+		"https://fantasy.premierleague.com/a/team/1393717",
+		"https://fantasy.premierleague.com/a/team/2638511",
+		"https://fantasy.premierleague.com/a/team/686132",
+		"https://fantasy.premierleague.com/a/team/863772",
+		"https://fantasy.premierleague.com/a/team/64769",
+		"https://fantasy.premierleague.com/a/team/1117151",
+		"https://fantasy.premierleague.com/a/team/1137790",
+		"https://fantasy.premierleague.com/a/team/1516929",
+		"https://fantasy.premierleague.com/a/team/1586353",
+		"https://fantasy.premierleague.com/a/team/1466461",
+	];
 }
 
 RenderUrlsToFile(arrayOfUrls, (function(status, url, file) {
