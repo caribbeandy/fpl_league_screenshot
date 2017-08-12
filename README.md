@@ -11,5 +11,4 @@ Takes screenshots of each player's team in a mini league
  `bin/phantomjs render_multi_url.js`
 
 ### Example output
-
-![rendermulti-1](rendermulti-1.png)
+<img src="rendermulti-1.png" style="zoom:65%" />
